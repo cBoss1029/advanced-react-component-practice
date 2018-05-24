@@ -1,5 +1,7 @@
 import React from 'react';
 import DateTime from './DateTime';
+import PropTypes from "prop-types";
+
 
 function MessagePreview(props){
     return(
@@ -10,16 +12,21 @@ function MessagePreview(props){
                     <img className="media-object" src="http://placehold.it/50x50" alt="" />
                 </span>
                 <div className="media-body">
-                    <h5 className="media-heading"><strong>John Smith</strong>
+                    <h5 className="media-heading"><strong>{props.message.name}</strong>
                     </h5>
                     {/*  <DateTime>   */}
+                    <DateTime/>
                     {/*  </DateTime>   */}
-                    <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                    <p>{props.message.message}</p>
                 </div>
             </div>
         </a>
     </li>
 
     )
+}
+
+MessagePreview.propTypes = {
+    message: PropTypes.object.isRequired,
 }
 export default MessagePreview;

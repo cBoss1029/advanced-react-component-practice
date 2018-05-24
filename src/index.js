@@ -30,3 +30,5 @@ ReactDOM.render(
     />,
   document.getElementById("root")
 );
+
+console.table(tasks);

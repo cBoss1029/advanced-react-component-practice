@@ -1,6 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
-import createData from "../createData";
+import PropTypes from "prop-types";
+
 
 function TasksPanel(props) {
     var taskItems = [];
@@ -33,9 +34,9 @@ function TasksPanel(props) {
                Date: <input id="taskDate"/>
                <button onClick={
                 ()=>{
-                    let task = document.getElementById("taskName").value;
-                    let date = document.getElementById("taskDate").value;
-                    createData.task({task,date});
+                    // let task = document.getElementById("taskName").value;
+                    // let date = document.getElementById("taskDate").value;
+                    // createData.task({task,date});
                 }
                }>Create</button>
                  
@@ -45,4 +46,7 @@ function TasksPanel(props) {
     </div>);
 }
 
+TasksPanel.propTypes = {
+    tasks: PropTypes.array.isRequired
+}
 export default TasksPanel;

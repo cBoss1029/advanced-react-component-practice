@@ -22,11 +22,12 @@ function App(props) {
       <div id="wrapper">
         <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
           {/*   <TopNav>   */}
-          <TopNav />
+          <TopNav messages = {props.messages}/>
           {/*   </TopNav>   */}
 
 
             {/*   <SideNav>   */}
+            <SideNav/>
             {/*   </SideNav>   */}
         </nav>
 
@@ -50,16 +51,20 @@ function App(props) {
                 <div className="row">
 
                    {/*   </Comments>   */}
+                   <Comments comments = {props.newComments}/>
                     {/*   </Comments>   */}
 
                     {/*   <Tasks>   */}
+                    <Tasks tasks = {props.newTasks}/>
                     {/*   </Tasks>   */}
 
                     {/*   <Orders>   */}
+                    <Orders orders = {props.newOrders}/>
                     {/*   </Orders>   */}
 
 
                     {/*   <Tickets>   */}
+                    <Tickets tickets = {props.tickets}/>
                     {/*   </Tickets>   */}
 
 
@@ -68,17 +73,20 @@ function App(props) {
                 </div>
                 
                 {/*   <AreaChart>   */}
+                <AreaChart/>
                 {/*   </AreaChart>   */}
 
                 <div className="row">
 
 
                     {/*   <DonutChart>   */}
+                    <DonutChart/>
                     {/*   </DonutChart>   */}
 
 
                     <div className="col-lg-4">
                         {/*   <TasksPanel>   */}
+                        <TasksPanel tasks = {props.tasks}/>
                         {/*   </TasksPanel>   */}
 
 
@@ -87,6 +95,7 @@ function App(props) {
 
 
                         {/*   </TransactionsPanel>   */}
+                        <TransactionsPanel orders = {props.orders}/>
                         {/*   </TransactionsPanel>   */}
 
                     </div>
@@ -106,6 +115,15 @@ function App(props) {
 }
 
 App.propTypes = {
+    taskItem: PropTypes.object.isRequired,
+    dateTime: PropTypes.string.isRequired,
+    newComments: PropTypes.number.isRequired,
+    newOrders: PropTypes.number.isRequired,
+    newTasks: PropTypes.number.isRequired,
+    tickets: PropTypes.number.isRequired,
+    orders: PropTypes.array.isRequired,
+    tasks: PropTypes.array.isRequired,
+    messages: PropTypes.array.isRequired
 
 };
 
